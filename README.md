@@ -1,7 +1,7 @@
 nose2-django-plugin
 ======================
 
-A plugin for Nose2 that runs your django tests through the nose2 command and also supports [django-configurations](https://github.com/jezdez/django-configurations) settings management. It re-uses the django test runner and helper functions to initialize the test environment for django and setup the order of the test suite as per the django test runner, but lets Nose2 handle the test discovery and execution.
+A plugin for Nose2 that runs your django tests through the nose2 command and also supports [django-configurations](https://github.com/jezdez/django-configurations) settings management. It re-uses the django test runner and helper functions to initialize the test environment for django and setup the order of the test suite, but lets Nose2 handle the test discovery and execution.
 
 Note there is already another project [django-nose2](https://github.com/jpellerin/django-nose2) which uses the standard django approach of setting an alternative test runner and running via manage.py. I only wrote this because I wanted to try the nose2 plugin architecture (which seems very nice) and I prefer not to run my tests via manage.py.
 
