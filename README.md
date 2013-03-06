@@ -19,6 +19,10 @@ Create a nose2.cfg file in your project's root directory (where manage.py is) an
 
 	[django-runner]
 	always-on = True
+    settings = yourproject.settings
+    configuration = YourTestConfiguration
+
+You can optionally set the `settings` and `configuration` to a DJANGO_SETTINGS_MODULE and DJANGO_CONFIGURATION. It takes precedence over any existing environment DJANGO_SETTINGS_MODULE.
 
 Usage
 --------
