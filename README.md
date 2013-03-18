@@ -8,9 +8,7 @@ A plugin pair for nose2 that runs your django (>=1.4) tests through the nose2 co
 Installation
 --------------
 
-For the moment install with pip directly from the repository. A package will be uploaded to pypi once I'm comfortable that it works as expected.
-
-	$ pip install https://github.com/bretth/nose2django/zipball/master
+	$ pip install nose2django
 
 Create a nose2.cfg file in your project's root directory (where manage.py is) and register the plugins in the correct order:
 
