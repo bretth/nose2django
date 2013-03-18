@@ -40,7 +40,7 @@ As per nose2, optionally with either of the django-runner options.
 	
 Patterns
 ------------
-For django app test driven development you want only as much django settings as required. Usually in you top level directory (or anywhere in your path but not the test directory) you would have a minimal settings.py, something like:
+For django app test driven development of apps you want only as much django settings as required. Create a tests folder in your top level directory (avoid using the name tests - use something like test_yourapp to avoid name clashes), and put a minimal settings file in there and an __init__.py file to make it importable. Something like:
 
 	DATABASES = {
     'default': {
