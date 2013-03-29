@@ -1,5 +1,4 @@
-__version__ = '0.1.1'
-
-
-def version_hook(config):
-    config['metadata']['version'] = __version__
+try:
+    __version__ = __import__('pkg_resources').get_distribution('nose2django').version
+except:
+    __version__ = ''

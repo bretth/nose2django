@@ -4,7 +4,7 @@
 Changelog
 ---------
 
-v0.1.1 (2013-03-29)
+v0.1 (2013-03-29)
 ^^^^^^^^^^^^^^^^^^^^
 
 - Initial public (correctly packaged) release. Thanks tox.
