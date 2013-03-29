@@ -1,1 +1,5 @@
 nose2_django_plugin.egg-info
+.tox/
+*.html
+*.pyc
+*.tar.gz
