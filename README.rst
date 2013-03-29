@@ -47,17 +47,17 @@ For django app test driven development of apps you want only as much django sett
 .. code-block:: python
 
 	DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3' }
-	}
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3' }
+    }
 
 	INSTALLED_APPS = (
-    	'django.contrib.auth',
-    	'django.contrib.contenttypes',
-    	'django.contrib.sessions',
-    	‘yourapp’,
-	)
-	ROOT_URLCONF=‘yourapp.urls', # if you have urls
+        'django.contrib.auth',
+        'django.contrib.contenttypes',
+        'django.contrib.sessions',
+        'yourapp',
+    )
+	ROOT_URLCONF='yourapp.urls', # if you have urls
 	SECRET_KEY = '1234'
 
 Acknowledgements
