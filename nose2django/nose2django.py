@@ -10,10 +10,7 @@ class DjangoConfig(Plugin):
     configSection = 'django-runner'
     commandLineSwitch = (None, 'django-runner',
         'Initialises the django test environment and re-orders the test suite')
-
-    def handleArgs(self, event):
-        """Nose2 hook for the handling the command line args"""
-        self.verbosity = event.args.verbose
+        
 
     def startTestRun(self, event):
         """Nose2 hook for the beginning of test running.
@@ -30,7 +27,8 @@ class DjangoConfig(Plugin):
         event.suite = reorder_suite(event.suite, (unittest.TestCase,))
 
         self.old_config = self.dtsr.setup_databases()
-        if self.verbosity > 0:
+        
+        if self.session.verbosity > 1:
             # ensure that deprecation warnings are displayed during testing
             # the following state is assumed:
             # logging.capturewarnings is true
@@ -38,14 +36,15 @@ class DjangoConfig(Plugin):
             # DeprecationWarning. See django.conf.LazySettings._configure_logging
             self.logger = logging.getLogger('py.warnings')
             handler = logging.StreamHandler()
-            logger.addHandler(handler)
+            self.logger.addHandler(handler)
 
 
     def afterTestRun(self, event):
         """Nose2 hook for the end of the test run"""
         from django.test.utils import teardown_test_environment
-        if self.verbosity > 0:
+        if self.session.verbosity > 1:
             # remove the testing-specific handler
+            handler = logging.StreamHandler()
             self.logger.removeHandler(handler)
         self.dtsr.teardown_databases(self.old_config)
         teardown_test_environment()
