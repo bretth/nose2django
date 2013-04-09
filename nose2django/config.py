@@ -37,6 +37,12 @@ class DjangoConfig(Plugin):
             pass
         from django.conf import settings
 
+        try:
+            from south.management.commands import patch_for_test_db_setup
+            patch_for_test_db_setup()
+        except ImportError:
+            pass
+
 
     def set_settings(self, arg):
         """ Override config file settings with command lind option """
